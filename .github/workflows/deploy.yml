@@ -1,6 +1,6 @@
-name: update
+name: deploy
 on: 
-  pull_request:
+  push:
     branches:
       - main
     paths:
@@ -8,7 +8,7 @@ on:
       - '**.json'
 
 jobs:
-  update:
+  deploy:
     name: EAS Update
     runs-on: ubuntu-latest
     steps:
@@ -56,4 +56,4 @@ jobs:
         run: echo "msg=$(git show -s --format=%s)" >> ${GITHUB_OUTPUT}
 
       - name: Publish update
-        run: eas update --branch preview --message "${{ steps.get-commit-msg.outputs.msg }}"
+        run: eas update --branch production --message "${{ steps.get-commit-msg.outputs.msg }}"

@@ -2,12 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
+import Constants from 'expo-constants';
+
 export default function App() {
   const [count, setCount] = useState(0);
 
   return (
     <View style={styles.container}>
       <Text>This is an update published from GH actions</Text>
+      <Text>{Constants.manifest?.releaseChannel ? Constants.manifest.releaseChannel : 'nothing'}</Text>
       <Text>Count: {count}</Text>
       <View style={{ backgroundColor: 'blue', borderRadius: 15, marginVertical: 100 }}>
         <Button title='Press me' onPress={() => setCount(count + 1)} color='white' />

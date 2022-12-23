@@ -53,4 +53,4 @@ jobs:
         run: echo "msg=$(git show -s --format=%s)" >> ${GITHUB_OUTPUT}
 
       - name: Publish update
-        run: eas update --branch preview --message ${{ steps.get-commit-msg.outputs.msg }}
+        run: eas update --branch preview --message "${{ steps.get-commit-msg.outputs.msg }}"

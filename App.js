@@ -9,7 +9,9 @@ export default function App() {
     <View style={styles.container}>
       <Text>This is an update published from GH actions</Text>
       <Text>Count: {count}</Text>
-      <Button title='Press me' onPress={() => setCount(count + 1)} />
+      <View style={{ backgroundColor: 'blue', borderRadius: 15, marginVertical: 100 }}>
+        <Button title='Press me' onPress={() => setCount(count + 1)} color='white' />
+      </View>
       <View style={{ backgroundColor: 'red', borderRadius: 15 }}>
         <Button title='Reset' onPress={() => setCount(0)} color='white' />
       </View>

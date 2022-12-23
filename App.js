@@ -10,7 +10,9 @@ export default function App() {
       <Text>This is an update published from GH actions</Text>
       <Text>Count: {count}</Text>
       <Button title='Press me' onPress={() => setCount(count + 1)} />
-      <Button title='Reset' onPress={() => setCount(0)} />
+      <View style={{ backgroundColor: 'red', borderRadius: 15 }}>
+        <Button title='Reset' onPress={() => setCount(0)} color='white' />
+      </View>
       <StatusBar style="auto" />
     </View>
   );

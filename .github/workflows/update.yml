@@ -48,5 +48,9 @@ jobs:
       - name: Install dependencies
         run: npm install 
 
+      - name: Get commit message
+        id: get-commit-msg
+        run: echo "msg=$(git show -s --format=%s)" >> ${GITHUB_OUTPUT}
+
       - name: Publish update
-        run: eas update --branch preview
+        run: eas update --branch preview --message ${{ steps.get-commit-msg.outputs.msg }}

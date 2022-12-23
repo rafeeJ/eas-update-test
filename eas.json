@@ -14,7 +14,7 @@
       "distribution": "internal"
     },
     "production": {
-      "channel": "production",
+      "channel": "production"
     }
   },
   "submit": {
